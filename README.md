@@ -11,7 +11,7 @@ Open your favourite web browser and follow the link: https://amanda-lacroix.gith
 ## Screenshot
 
 Screenshot of the demo to verify against the live website as noted above:
-
+![04-web-apis-homework-demo](https://user-images.githubusercontent.com/116973964/216781923-6f300191-3182-4ea7-98c4-e1fbe5e32ead.gif)
 
 
 ## Credits
