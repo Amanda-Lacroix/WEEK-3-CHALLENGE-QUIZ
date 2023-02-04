@@ -6,7 +6,7 @@ A quiz testing your knowledge of JavaScript that is timed with the game being ov
 
 ## Installation
 
-Open your favourite web browser and follow the link: https://amanda-lacroix.github.io/WEEK-3-CHALLENGE-QUIZ/
+Open your favourite web browser and follow the link: https://amanda-lacroix.github.io/WEEK-4-CHALLENGE-QUIZ/
 
 ## Screenshot
 
