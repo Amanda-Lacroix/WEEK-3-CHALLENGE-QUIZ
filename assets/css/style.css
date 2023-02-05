@@ -1,0 +1,25 @@
+header {
+    background-color: purple;
+    font-family: fantasy;
+    font-size: large;
+    text-align: center;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+}
+
+#timeclock {
+    background-color: yellow;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    float: right;
+}
+
+section {
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+}
+
+
