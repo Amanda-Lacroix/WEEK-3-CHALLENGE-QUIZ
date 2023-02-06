@@ -2,12 +2,37 @@
 // THEN a timer starts and I am presented with a question
 //    	EVENTLISTENER (see Week 4 #11 JS ): on start button click then FUNCTION: the timer starts (see Week 4 #11 JS ) and a question is presented (prompt)
 
+var startButton = document.getElementById("button")
 
+startButton.addEventListener("click", startQuiz);
 
+function startQuiz(){
+     alert("Hello World!"); 
+    }
 
 // WHEN I answer a question
 // THEN I am presented with another question
-//    	PROMPT: go to the next question
+//    FUNCTION: go to the next question ( need a variable of questions.put prompts with questions in an array--need to loop throuh question (for loop))
+
+// var questions = [
+//     {   
+//         prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
+//         return: "b",
+//     }
+
+//     {  
+//         prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
+//         return: "b",
+//     }
+
+//     {
+//         prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
+//         return: "b",
+//     }
+
+// ]
+
+// FOR LOOP:
 
 
 
@@ -29,6 +54,4 @@
 // WHEN the game is over
 // THEN I can save my initials and my score
 // 	FUNCTION: to input user score and save to the LOCAL STORAGE (see Week 4 #25 JS)
-
-
 
