@@ -6,6 +6,7 @@ header {
     border-width: 5px;
     border-style: solid;
     border-color: black;
+    margin: 50px;
 }
 
 #timeclock {
@@ -16,10 +17,9 @@ header {
     float: right;
 }
 
-section {
-    border-width: 3px;
-    border-style: solid;
-    border-color: black;
+button {
+    padding: 5%;
+    border-radius: 50%;
+    position: relative; left: 42%;
+    
 }
-
-
