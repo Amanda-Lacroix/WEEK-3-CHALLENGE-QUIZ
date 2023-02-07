@@ -2,52 +2,52 @@
 // THEN a timer starts and I am presented with a question
 //    	EVENTLISTENER (see Week 4 #11 JS ): on start button click then FUNCTION: the timer starts (see Week 4 #11 JS ) and a question is presented (prompt)
 
-// var startButton = document.getElementById("button");
-var timerEl = document.getElementById("timeclock");
-var secondsLeft = 60;  
+                    // var startButton = document.getElementById("button");
+                    // var timerEl = document.querySelector(".timeclock");
+                    // var secondsLeft = 60;  
 
-// startButton.addEventListener("click", startQuiz);
-timerEl.addEventListener("onload",);
+                    // startButton.addEventListener("click", startQuiz);
 
-// function startQuiz(){
-//      alert("Hello World!"); 
-//     }
+                    // function startQuiz(){
+                    //      alert("Hello World!"); 
+                    //     }
 
-function setTime() {
- var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timerEl = secondsLeft;
 
-    if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-    }
+                    // function setTime() {
+                    //  var timerInterval = setInterval(function() {
+                    //     secondsLeft--;
+                    //     timerEl.textContent = secondsLeft + "!";
 
- }, 1000);
-}
+                    //     if(secondsLeft === 0) {
+                    //         clearInterval(timerInterval);
+                    //     }
 
-setTime();
+                    //  }, 1000);
+                    // }
+
+                    // setTime();
 
 // WHEN I answer a question
 // THEN I am presented with another question
 //    FUNCTION: go to the next question ( need a variable of questions.put prompts with questions in an array--need to loop throuh question (for loop))
 
-// var questions = [
-//     {   
-//         prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
-//         return: "b",
-//     }
+var questions = [
+    {   
+        prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
+        return: "b",
+    }
 
-//     {  
-//         prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
-//         return: "b",
-//     }
+    {  
+        prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
+        return: "b",
+    }
 
-//     {
-//         prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
-//         return: "b",
-//     }
+    {
+        prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
+        return: "b",
+    }
 
-// ]
+]
 
 // FOR LOOP:
 
