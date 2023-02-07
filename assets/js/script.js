@@ -2,13 +2,30 @@
 // THEN a timer starts and I am presented with a question
 //    	EVENTLISTENER (see Week 4 #11 JS ): on start button click then FUNCTION: the timer starts (see Week 4 #11 JS ) and a question is presented (prompt)
 
-var startButton = document.getElementById("button")
+// var startButton = document.getElementById("button");
+var timerEl = document.getElementById("timeclock");
+var secondsLeft = 60;  
 
-startButton.addEventListener("click", startQuiz);
+// startButton.addEventListener("click", startQuiz);
+timerEl.addEventListener("onload",);
 
-function startQuiz(){
-     alert("Hello World!"); 
+// function startQuiz(){
+//      alert("Hello World!"); 
+//     }
+
+function setTime() {
+ var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timerEl = secondsLeft;
+
+    if(secondsLeft === 0) {
+        clearInterval(timerInterval);
     }
+
+ }, 1000);
+}
+
+setTime();
 
 // WHEN I answer a question
 // THEN I am presented with another question

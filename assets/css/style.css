@@ -11,10 +11,14 @@ header {
 
 #timeclock {
     background-color: yellow;
+    text-align: center;
+    font-size: large;
     border-width: 5px;
     border-style: solid;
     border-color: black;
     float: right;
+    padding: 5%;
+    border-radius: 50%;
 }
 
 button {
