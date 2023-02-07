@@ -2,56 +2,35 @@
 // THEN a timer starts and I am presented with a question
 //    	EVENTLISTENER (see Week 4 #11 JS ): on start button click then FUNCTION: the timer starts (see Week 4 #11 JS ) and a question is presented (prompt)
 
-                    // var startButton = document.getElementById("button");
-                    // var timerEl = document.querySelector(".timeclock");
-                    // var secondsLeft = 60;  
+        var startButton = document.getElementById("button");
+        var timerEl = document.querySelector(".timeclock");
+        var secondsLeft = 60;  
 
-                    // startButton.addEventListener("click", startQuiz);
+        startButton.addEventListener("click", startQuiz);
 
-                    // function startQuiz(){
-                    //      alert("Hello World!"); 
-                    //     }
+// we need a function to start the quiz and the timer
+    function startQuiz(){
+    setTime(); 
+    }
 
+// we need a function that sets the timer interval
+    function setTime() {
+    var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timerEl.textContent = secondsLeft + "!";
 
-                    // function setTime() {
-                    //  var timerInterval = setInterval(function() {
-                    //     secondsLeft--;
-                    //     timerEl.textContent = secondsLeft + "!";
+    if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+    }
 
-                    //     if(secondsLeft === 0) {
-                    //         clearInterval(timerInterval);
-                    //     }
+    }, 1000);
+    }
 
-                    //  }, 1000);
-                    // }
-
-                    // setTime();
+       
 
 // WHEN I answer a question
 // THEN I am presented with another question
-//    FUNCTION: go to the next question ( need a variable of questions.put prompts with questions in an array--need to loop throuh question (for loop))
-
-var questions = [
-    {   
-        prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
-        return: "b",
-    }
-
-    {  
-        prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
-        return: "b",
-    }
-
-    {
-        prompt: "What colour is the sky? (a) yellow (b) blue (c) purple",
-        return: "b",
-    }
-
-]
-
-// FOR LOOP:
-
-
+// PROMPTS: we need prompt for the questions and IF statements to verify the correct answer. 
 
 
 // WHEN I answer a question incorrectly
