@@ -10,7 +10,8 @@
 
 // we need a function to start the quiz and the timer
     function startQuiz(){
-    setTime(); 
+    setTime();
+    playQuiz();
     }
 
 // we need a function that sets the timer interval
@@ -24,9 +25,37 @@
     }
 
     }, 1000);
+
     }
 
-       
+    var correct = 0;
+    var options = ["A", "B" , "C"];
+
+    var playQuiz = function(){
+        // ask the question
+        var userChoice1 =window.prompt ("What colour is the sky? A) purple B) green C) blue")
+    
+        // if users presses cancel, end function
+    if (!userChoice1) {
+        return;
+    }
+
+    userChoice1 = userChoice1.toUpperCase();
+
+    if (userChoice1 === "C"){
+        correct++;
+        alert("Answer is Correct!");
+
+    } else if (
+        (userChoice1 === "A") || 
+        (userChoice1 === "B")
+    ){
+        alert("Incorrect Answer");
+    }
+
+}
+
+
 
 // WHEN I answer a question
 // THEN I am presented with another question
