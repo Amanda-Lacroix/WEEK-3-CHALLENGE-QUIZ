@@ -5,12 +5,16 @@
         var startButton = document.getElementById("button");
         var timerEl = document.querySelector(".timeclock");
         var secondsLeft = 60;  
+        var score = document.querySelector(".scoreBoard");
+        var correct = 0;
+       
 
         startButton.addEventListener("click", startQuiz);
 
 // we need a function to start the quiz and the timer
     function startQuiz(){
-    setTime();
+    // WHY WONT THIS WORK!!!!
+    setTime(); 
     playQuiz();
     }
 
@@ -28,8 +32,7 @@
 
     }
 
-    var correct = 0;
-    var options = ["A", "B" , "C"];
+  
 
     var playQuiz = function(){
         // ask the question
@@ -53,9 +56,63 @@
         alert("Incorrect Answer");
     }
 
+    questionTwo();
+
+}
+
+var questionTwo = function(){
+    // ask the question
+    var userChoice2 =window.prompt ("What colcour is a bus? A) yellow  B) green C) blue")
+
+    // if users presses cancel, end function
+if (!userChoice2) {
+    return;
+}
+
+userChoice2 = userChoice2.toUpperCase();
+
+if (userChoice2 === "A"){
+    correct++;
+    alert("Answer is Correct!");
+
+} else if (
+    (userChoice2 === "B") || 
+    (userChoice2 === "C")
+){
+    alert("Incorrect Answer");
+}
+
+questionThree();
+
+}
+
+var questionThree = function(){
+    // ask the question
+    var userChoice3 =window.prompt ("What colcour is a an apple? A) yellow  B) red C) blue")
+
+    // if users presses cancel, end function
+if (!userChoice3) {
+    return;
+}
+
+userChoice3 = userChoice3.toUpperCase();
+
+if (userChoice3 === "B"){
+    correct++;
+    alert("Answer is Correct!");
+
+} else if (
+    (userChoice3 === "A") || 
+    (userChoice3 === "C")
+){
+    alert("Incorrect Answer");
 }
 
 
+
+}
+
+score.textContent = correct
 
 // WHEN I answer a question
 // THEN I am presented with another question
