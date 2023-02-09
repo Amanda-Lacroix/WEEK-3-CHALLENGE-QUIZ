@@ -4,14 +4,13 @@
 
     var startButton = document.getElementById("button");
     var timerEl = document.querySelector(".timeclock");
-    var score = document.querySelector(".scoreBoard");
+    var score = document.querySelector(".scoreBoard").value; 
     var secondsLeft = 60; 
-// ADD THIS TO LOCAL STORAGE? WHY IS THE TOTAL NOT INCREASING?
     var correct = 0;
-    // localStorage.setItem("correct", correct);
-// Places incremented score on page
-    score.textContent= "Your total score is: " + correct + ".";
-    console.log 
+    
+
+// // // Places incremented score on page ??????
+// score.textContent= "Your total score is: " + (score) + ".";
 
 
 // EVENTLISTENER (see Week 4 #11 JS ): on start button click then FUNCTION: the timer starts (see Week 4 #11 JS ) and a question is presented (prompt)
@@ -29,7 +28,7 @@ startButton.addEventListener("click", startQuiz);
     secondsLeft--;
     timerEl.textContent = secondsLeft + "!";
 
-// WHEN all questions are answered or the timer reaches 0
+// WHEN all the timer reaches 0
 // THEN the game is over
     if(secondsLeft === 0) {
     clearInterval(timerInterval);
@@ -67,13 +66,13 @@ startButton.addEventListener("click", startQuiz);
         (userChoice1 === "A") || 
         (userChoice1 === "B")
     ){
-        secondsLeft -= 10
+        // secondsLeft -= 10;
         alert("Incorrect Answer");
-        
     }
+
         questionTwo();
-         
-    }
+
+}
 
 
     function questionTwo(){
@@ -125,13 +124,17 @@ startButton.addEventListener("click", startQuiz);
 
     }
 
+    gameOver()
+
     }
 
 // WHEN all questions are answered
 // THEN the game is over
     function gameOver(){
-    alert("GAME OVER!")
-
+    var name = prompt("GAME OVER! Your score is " + correct + "." + " Enter name:");
+    localStorage.setItem('personName', name);
+    localStorage.setItem('personScore', score);
+    
     }
 
 

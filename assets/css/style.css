@@ -22,20 +22,7 @@ header {
 }
 
 button {
-    padding: 5%;
-    border-radius: 50%;
-    position: relative; left: 42%;
+    position: relative; left: 47%;
+   
     
-}
-
-.scoreBoard {
-    background-color: green;
-    text-align: center;
-    font-size: large;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black;
-    float: left;
-    padding: 5%;
-    border-radius: 50%;
 }
