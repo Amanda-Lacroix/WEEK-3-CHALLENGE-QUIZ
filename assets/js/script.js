@@ -4,36 +4,36 @@
 
         var startButton = document.getElementById("button");
         var timerEl = document.querySelector(".timeclock");
-        var secondsLeft = 60;  
+        var secondsLeft = 10;  
         var score = document.querySelector(".scoreBoard");
         var correct = 0;
-       
 
         startButton.addEventListener("click", startQuiz);
+
+        score.textContent= "Your total score is: " + correct + ".";
+
+        // we need a function that sets the timer interval
+    function setTime() {
+        var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timerEl.textContent = secondsLeft + "!";
+    
+        if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        }
+    
+        }, 1000);
+    
+        }
 
 // we need a function to start the quiz and the timer
     function startQuiz(){
     // WHY WONT THIS WORK!!!!
-    setTime(); 
+    setTime();
     playQuiz();
     }
 
-// we need a function that sets the timer interval
-    function setTime() {
-    var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timerEl.textContent = secondsLeft + "!";
-
-    if(secondsLeft === 0) {
-    clearInterval(timerInterval);
-    }
-
-    }, 1000);
-
-    }
-
   
-
     var playQuiz = function(){
         // ask the question
         var userChoice1 =window.prompt ("What colour is the sky? A) purple B) green C) blue")
@@ -46,7 +46,7 @@
     userChoice1 = userChoice1.toUpperCase();
 
     if (userChoice1 === "C"){
-        correct++;
+        correct ++;
         alert("Answer is Correct!");
 
     } else if (
@@ -72,7 +72,7 @@ if (!userChoice2) {
 userChoice2 = userChoice2.toUpperCase();
 
 if (userChoice2 === "A"){
-    correct++;
+    correct ++;
     alert("Answer is Correct!");
 
 } else if (
@@ -98,7 +98,7 @@ if (!userChoice3) {
 userChoice3 = userChoice3.toUpperCase();
 
 if (userChoice3 === "B"){
-    correct++;
+    correct ++;
     alert("Answer is Correct!");
 
 } else if (
@@ -109,10 +109,7 @@ if (userChoice3 === "B"){
 }
 
 
-
 }
-
-score.textContent = correct
 
 // WHEN I answer a question
 // THEN I am presented with another question
