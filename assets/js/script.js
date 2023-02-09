@@ -5,7 +5,7 @@
     var startButton = document.getElementById("button");
     var timerEl = document.querySelector(".timeclock");
     var score = document.querySelector(".scoreBoard").value; 
-    var secondsLeft = 60; 
+    var secondsLeft = 10; 
     var correct = 0;
     
 
@@ -15,10 +15,11 @@
 
 // EVENTLISTENER (see Week 4 #11 JS ): on start button click then FUNCTION: the timer starts (see Week 4 #11 JS ) and a question is presented (prompt)
 startButton.addEventListener("click", startQuiz);
+
 // we need a function to start the quiz and the timer
     function startQuiz(){
 // WHY WONT THIS WORK!!!! (timer starts after the last question)
-    setTime()
+    setTime();
     playQuiz();
     }
 
@@ -36,11 +37,12 @@ startButton.addEventListener("click", startQuiz);
     }
   
     }, 1000);
+
+   
+    }
 // WHEN I answer a question incorrectly
 // THEN time is subtracted from the clock
 //  HOW TO DO I DO THIS?????
-    
-    }
   
 // WHEN I answer a question
 // THEN I am presented with another question
@@ -66,12 +68,14 @@ startButton.addEventListener("click", startQuiz);
         (userChoice1 === "A") || 
         (userChoice1 === "B")
     ){
-        // secondsLeft -= 10;
-        alert("Incorrect Answer");
-    }
 
+    }alert("Incorrect Answer");
+    
+    {
+   
         questionTwo();
-
+   
+    }
 }
 
 
@@ -130,22 +134,27 @@ startButton.addEventListener("click", startQuiz);
 
 // WHEN all questions are answered
 // THEN the game is over
+// THEN I can save my initials and my score
     function gameOver(){
     var name = prompt("GAME OVER! Your score is " + correct + "." + " Enter name:");
     localStorage.setItem('personName', name);
-    localStorage.setItem('personScore', score);
+    localStorage.setItem('personScore', correct);
     
+    if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+    }
+
+    if ( (name)|| 
+        (!name)||
+        (correct)|| 
+        (!correct)  )
+
+        {
+    localStorage.clear;
+ alert("Thanks for playing!");
+         }
+ 
     }
 
 
-
-
-
-
-
-
-
-
-// WHEN the game is over
-// THEN I can save my initials and my score
-// 	FUNCTION: to input user score and save to the LOCAL STORAGE (see Week 4 #25 JS)
+  
