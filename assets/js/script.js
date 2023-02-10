@@ -5,7 +5,7 @@
     var startButton = document.getElementById("button");
     var timerEl = document.querySelector(".timeclock");
     var score = document.querySelector(".scoreBoard").value; 
-    var secondsLeft = 10; 
+    var secondsLeft = 60; 
     var correct = 0;
     
 
@@ -18,7 +18,7 @@ startButton.addEventListener("click", startQuiz);
 
 // we need a function to start the quiz and the timer
     function startQuiz(){
-// WHY WONT THIS WORK!!!! (timer starts after the last question)
+// WHY WONT THIS WORK!!!! (timer starts after the last prompt)
     setTime();
     playQuiz();
     }
