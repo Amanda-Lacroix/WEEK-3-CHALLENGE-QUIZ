@@ -1,13 +1,10 @@
-// WHEN I click the start button
-// THEN a timer starts and I am presented with a question
 
+var startButton = document.getElementById("button");
+var timerEl = document.querySelector(".timeclock");
+var score = document.querySelector(".scoreBoard").value; 
+var secondsLeft = 60; 
+var correct = 0;
 
-    var startButton = document.getElementById("button");
-    var timerEl = document.querySelector(".timeclock");
-    var score = document.querySelector(".scoreBoard").value; 
-    var secondsLeft = 60; 
-    var correct = 0;
-    
 
 // // // Places incremented score on page ??????
 // score.textContent= "Your total score is: " + (score) + ".";
@@ -17,144 +14,143 @@
 startButton.addEventListener("click", startQuiz);
 
 // we need a function to start the quiz and the timer
-    function startQuiz(){
-// WHY WONT THIS WORK!!!! (timer starts after the last prompt)
-    setTime();
-    playQuiz();
-    }
+function startQuiz(){
+// WHY WONT THIS WORK!!!! (timer starts after the last question)
+setTime();
+playQuiz();
+}
 
 // we need a function that sets the timer interval
-    function setTime(){
-    var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timerEl.textContent = secondsLeft + "!";
+function setTime(){
+var timerInterval = setInterval(function() {
+secondsLeft--;
+timerEl.textContent = secondsLeft + "!";
 
 // WHEN all the timer reaches 0
 // THEN the game is over
-    if(secondsLeft === 0) {
-    clearInterval(timerInterval);
-    alert("GAME OVER");
-    }
-  
-    }, 1000);
+if(secondsLeft === 0) {
+clearInterval(timerInterval);
+alert("GAME OVER");
+}
 
-   
-    }
+}, 1000);
+
+
+}
 // WHEN I answer a question incorrectly
 // THEN time is subtracted from the clock
 //  HOW TO DO I DO THIS?????
-  
+
 // WHEN I answer a question
 // THEN I am presented with another question
 // PROMPTS: we need prompt for the questions and IF statements to verify the correct answer. 
-   
-   function playQuiz(){  
+
+function playQuiz(){  
 // ask the question
-    var userChoice1 =window.prompt ("JavaScript has a file extension of? A) .html B) .css C) .js")
+var userChoice1 =window.prompt ("JavaScript has a file extension of? A) .html B) .css C) .js")
 
 // if users presses cancel, end function
-    if (!userChoice1) {
-        return;
-    }
-
-    userChoice1 = userChoice1.toUpperCase();
-
-    if (userChoice1 === "C"){
-// increase score if correct
-        correct ++;
-        alert("Answer is Correct!");
-    
-        } else if (
-        (userChoice1 === "A") || 
-        (userChoice1 === "B")
-        ){
-        alert("Incorrect Answer");
-        }
-   
-        questionTwo();
-   
- }
-
-
-    function questionTwo(){
-//we need to ask the question
-    var userChoice2 =window.prompt ("In which HTML Element do we put the JavaScript? A) script  B) js C) writing")
-
-//if users presses cancel, end function
-    if (!userChoice2) {
+if (!userChoice1) {
     return;
-    }
+}
 
-    userChoice2 = userChoice2.toUpperCase();
+userChoice1 = userChoice1.toUpperCase();
 
-    if (userChoice2 === "A"){
+if (userChoice1 === "C"){
+// increase score if correct
     correct ++;
     alert("Answer is Correct!");
 
     } else if (
-    (userChoice2 === "B") || 
-    (userChoice2 === "C")
+    (userChoice1 === "A") || 
+    (userChoice1 === "B")
     ){
     alert("Incorrect Answer");
     }
 
-    questionThree();
+    questionTwo();
 
-    }
+}
 
-    function questionThree() {
-    // ask the question
-    var userChoice3 =window.prompt ("What year was JavaScript invented? A) 2005  B) 1995 C) 1985")
 
-    // if users presses cancel, end function
-    if (!userChoice3) {
-    return;
-    }
+function questionTwo(){
+//we need to ask the question
+var userChoice2 =window.prompt ("In which HTML Element do we put the JavaScript? A) script  B) js C) writing")
 
-    userChoice3 = userChoice3.toUpperCase();
+//if users presses cancel, end function
+if (!userChoice2) {
+return;
+}
 
-    if (userChoice3 === "B"){
-    correct ++;
-    alert("Answer is Correct!");
+userChoice2 = userChoice2.toUpperCase();
 
-    } else if (
-    (userChoice3 === "A") || 
-    (userChoice3 === "C")
-    ){
-    alert("Incorrect Answer")
+if (userChoice2 === "A"){
+correct ++;
+alert("Answer is Correct!");
 
-    }
+} else if (
+(userChoice2 === "B") || 
+(userChoice2 === "C")
+){
+alert("Incorrect Answer");
+}
 
-    gameOver()
+questionThree();
 
-    }
+}
+
+function questionThree() {
+// ask the question
+var userChoice3 =window.prompt ("What year was JavaScript invented? A) 2005  B) 1995 C) 1985")
+
+// if users presses cancel, end function
+if (!userChoice3) {
+return;
+}
+
+userChoice3 = userChoice3.toUpperCase();
+
+if (userChoice3 === "B"){
+correct ++;
+alert("Answer is Correct!");
+
+} else if (
+(userChoice3 === "A") || 
+(userChoice3 === "C")
+){
+alert("Incorrect Answer")
+
+}
+
+gameOver()
+
+}
 
 // WHEN all questions are answered
 // THEN the game is over
 // THEN I can save my initials and my score
-    function gameOver(){
-    var name = prompt("GAME OVER! Your score is " + correct + "." + " Enter name:");
-    localStorage.setItem('personName', name);
-    localStorage.setItem('personScore', correct);
-    
-    if ( (name)|| 
-        (!name)||
-        (correct)|| 
-        (!correct)  )
+function gameOver(){
+var name = prompt("GAME OVER! Your score is " + correct + "." + " Enter name:");
+localStorage.setItem('personName', name);
+localStorage.setItem('personScore', correct);
 
-    correct= 0
-    localStorage.clear;
+if ( (name)|| 
+    (!name)||
+    (correct)|| 
+    (!correct)  )
 
+correct= 0
+localStorage.clear;
+alert("Thanks for playing!");
 
- var playAgain = window.confirm("Thanks for playing! Would you like to play again?");
-
- if (playAgain) {
-    startQuiz();
- }
-
+if (timerCount === 0) {
+return;
+}
 
 }
- 
+
+
+
 
 
 
