@@ -137,21 +137,22 @@ startButton.addEventListener("click", startQuiz);
     localStorage.setItem('personName', name);
     localStorage.setItem('personScore', correct);
     
-    if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-    }
-
     if ( (name)|| 
         (!name)||
         (correct)|| 
         (!correct)  )
 
-        {
+    correct= 0
     localStorage.clear;
  alert("Thanks for playing!");
-         }
+
+ if (timerCount === 0) {
+    return;
+  }
+
+}
  
-    }
+
 
 
   
