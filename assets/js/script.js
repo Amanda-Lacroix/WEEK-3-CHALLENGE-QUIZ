@@ -144,11 +144,14 @@ startButton.addEventListener("click", startQuiz);
 
     correct= 0
     localStorage.clear;
- alert("Thanks for playing!");
 
- if (timerCount === 0) {
-    return;
-  }
+
+ var playAgain = window.confirm("Thanks for playing! Would you like to play again?");
+
+ if (playAgain) {
+    startQuiz();
+ }
+
 
 }
  
