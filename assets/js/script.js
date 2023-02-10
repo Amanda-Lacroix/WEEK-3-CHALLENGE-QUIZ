@@ -60,23 +60,20 @@ startButton.addEventListener("click", startQuiz);
     userChoice1 = userChoice1.toUpperCase();
 
     if (userChoice1 === "C"){
-// incements the user score by 1 if correct
+// increase score if correct
         correct ++;
         alert("Answer is Correct!");
-
-    } else if (
+    
+        } else if (
         (userChoice1 === "A") || 
         (userChoice1 === "B")
-    ){
-
-    }alert("Incorrect Answer");
-    
-    {
+        ){
+        alert("Incorrect Answer");
+        }
    
         questionTwo();
    
-    }
-}
+ }
 
 
     function questionTwo(){
