@@ -50,7 +50,7 @@ startButton.addEventListener("click", startQuiz);
    
    function playQuiz(){  
 // ask the question
-    var userChoice1 =window.prompt ("What colour is the sky? A) purple B) green C) blue")
+    var userChoice1 =window.prompt ("JavaScript has a file extension of? A) .html B) .css C) .js")
 
 // if users presses cancel, end function
     if (!userChoice1) {
@@ -78,7 +78,7 @@ startButton.addEventListener("click", startQuiz);
 
     function questionTwo(){
 //we need to ask the question
-    var userChoice2 =window.prompt ("What colcour is a bus? A) yellow  B) green C) blue")
+    var userChoice2 =window.prompt ("In which HTML Element do we put the JavaScript? A) script  B) js C) writing")
 
 //if users presses cancel, end function
     if (!userChoice2) {
@@ -104,7 +104,7 @@ startButton.addEventListener("click", startQuiz);
 
     function questionThree() {
     // ask the question
-    var userChoice3 =window.prompt ("What colcour is a an apple? A) yellow  B) red C) blue")
+    var userChoice3 =window.prompt ("What year was JavaScript invented? A) 2005  B) 1995 C) 1985")
 
     // if users presses cancel, end function
     if (!userChoice3) {
